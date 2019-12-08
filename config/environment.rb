@@ -1,6 +1,6 @@
 require 'bundler'
 Bundler.require
-
+#require '../lib/concerns/findable.rb'
 module Concerns
 end
 
