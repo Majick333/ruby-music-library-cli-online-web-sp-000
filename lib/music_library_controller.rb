@@ -2,10 +2,22 @@ class MusicLibraryController
 
   extend Concerns::Findable
 
+  @@all = []
+
+  def self.all
+    @@all
+  end
+
+  def save
+    @@all << self
+  end
+
   def initialize(path = "./db/mp3s")
     new_importer_object = MusicImporter.new(path)
     new_importer_object.import
   end
+
+
 
   def call
     input = ""
